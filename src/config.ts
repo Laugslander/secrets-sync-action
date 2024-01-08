@@ -61,8 +61,7 @@ export function getConfig(): Config {
         || ""
   };
 
-  console.log("REPO ID")
-  console.log(process.env.GITHUB_REPOSITORY_ID)
+  core.info(`REPO ID ${process.env.GITHUB_REPOSITORY_ID}`)
 
   if (config.DRY_RUN) {
     core.info("[DRY_RUN='true'] No changes will be written to secrets");
