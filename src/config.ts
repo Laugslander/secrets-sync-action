@@ -58,6 +58,7 @@ export function getConfig(): Config {
     AUDIT_LOG_HASHING_SALT:
         core.getInput("AUDIT_LOG_HASHING_SALT") ||
         process.env.GITHUB_REPOSITORY_ID
+        || ""
   };
 
   if (config.DRY_RUN) {
