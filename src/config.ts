@@ -56,12 +56,12 @@ export function getConfig(): Config {
     ENVIRONMENT: core.getInput("ENVIRONMENT", { required: false }),
     TARGET: core.getInput("TARGET", { required: false }),
     AUDIT_LOG_HASHING_SALT:
-        core.getInput("AUDIT_LOG_HASHING_SALT") ||
-        process.env.GITHUB_REPOSITORY_ID
-        || ""
+      core.getInput("AUDIT_LOG_HASHING_SALT") ||
+      process.env.GITHUB_REPOSITORY_ID ||
+      "",
   };
 
-  core.info(`REPO ID ${process.env.GITHUB_REPOSITORY_ID}`)
+  core.info(`REPO ID ${process.env.GITHUB_REPOSITORY_ID}`);
 
   if (config.DRY_RUN) {
     core.info("[DRY_RUN='true'] No changes will be written to secrets");
